@@ -2,18 +2,18 @@ package com.momen.weather.features.currentweather.presentation
 
 
 import androidx.lifecycle.*
-import com.momen.weather.data.remote.model.WeatherResponse
-import com.momen.weather.data.repository.WeatherRepository
+import com.momen.data.remote.model.WeatherResponse
+import com.momen.data.repository.WeatherRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
 class CurrentWeatherViewModel @Inject constructor(
-    private val repository: WeatherRepository
+    private val repository: com.momen.data.repository.WeatherRepository
 ) : ViewModel() {
-    private val _weather = MutableLiveData<WeatherResponse?>()
-    val weather: LiveData<WeatherResponse?> = _weather
+    private val _weather = MutableLiveData<com.momen.data.remote.model.WeatherResponse?>()
+    val weather: LiveData<com.momen.data.remote.model.WeatherResponse?> = _weather
 
     private val _error = MutableLiveData<String?>()
     val error: LiveData<String?> = _error

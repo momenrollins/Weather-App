@@ -1,4 +1,4 @@
-package com.momen.weather.data.remote.model
+package com.momen.data.remote.model
 
 data class ForecastResponse(
     val list: List<Forecast>

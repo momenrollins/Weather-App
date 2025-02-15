@@ -1,9 +1,9 @@
 package com.momen.weather.core.di
 
-import com.momen.weather.data.local.LocalDataSource
-import com.momen.weather.data.remote.WeatherApi
-import com.momen.weather.data.repository.WeatherRepository
-import com.momen.weather.data.repository.WeatherRepositoryImpl
+import com.momen.data.local.LocalDataSource
+import com.momen.data.remote.WeatherApi
+import com.momen.data.repository.WeatherRepository
+import com.momen.data.repository.WeatherRepositoryImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -16,7 +16,8 @@ object RepositoryModule {
     @Provides
     @Singleton
     fun provideWeatherRepository(
-        api: WeatherApi,
-        localDataSource: LocalDataSource
-    ): WeatherRepository = WeatherRepositoryImpl(api, localDataSource)
+        api: com.momen.data.remote.WeatherApi,
+        localDataSource: com.momen.data.local.LocalDataSource
+    ): com.momen.data.repository.WeatherRepository =
+        com.momen.data.repository.WeatherRepositoryImpl(api, localDataSource)
 }

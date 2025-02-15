@@ -2,7 +2,7 @@ package com.momen.weather.features.forecast.presentation
 
 
 import androidx.lifecycle.*
-import com.momen.weather.data.repository.WeatherRepository
+import com.momen.data.repository.WeatherRepository
 import com.momen.weather.features.forecast.intent.ForecastIntent
 import com.momen.weather.features.forecast.state.ForecastState
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -11,7 +11,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class ForecastViewModel @Inject constructor(
-    private val repository: WeatherRepository
+    private val repository: com.momen.data.repository.WeatherRepository
 ) : ViewModel() {
 
     private val _state = MutableLiveData<ForecastState>(ForecastState.Idle)

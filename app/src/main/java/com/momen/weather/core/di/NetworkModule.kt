@@ -2,7 +2,7 @@ package com.momen.weather.core.di
 
 
 import com.momen.weather.BuildConfig
-import com.momen.weather.data.remote.WeatherApi
+import com.momen.data.remote.WeatherApi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -43,6 +43,6 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun provideWeatherApi(retrofit: Retrofit): WeatherApi =
-        retrofit.create(WeatherApi::class.java)
+    fun provideWeatherApi(retrofit: Retrofit): com.momen.data.remote.WeatherApi =
+        retrofit.create(com.momen.data.remote.WeatherApi::class.java)
 }

@@ -14,7 +14,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import coil3.compose.rememberAsyncImagePainter
-import com.momen.weather.utils.IconProvider
+import com.momen.core.utils.IconProvider
 
 @Composable
 fun CurrentWeatherScreen(

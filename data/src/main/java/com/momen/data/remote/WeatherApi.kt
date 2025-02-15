@@ -1,7 +1,7 @@
-package com.momen.weather.data.remote
+package com.momen.data.remote
 
-import com.momen.weather.data.remote.model.ForecastResponse
-import com.momen.weather.data.remote.model.WeatherResponse
+import com.momen.data.remote.model.ForecastResponse
+import com.momen.data.remote.model.WeatherResponse
 import retrofit2.http.GET
 import retrofit2.http.Query
 

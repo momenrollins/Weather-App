@@ -1,4 +1,4 @@
-package com.momen.weather.data.local
+package com.momen.data.local
 
 interface LocalDataSource {
     fun getLastSearchedCity(): String?

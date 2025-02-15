@@ -1,10 +1,10 @@
-package com.momen.weather.data.repository
+package com.momen.data.repository
 
-import com.momen.weather.BuildConfig
-import com.momen.weather.data.local.LocalDataSource
-import com.momen.weather.data.remote.WeatherApi
-import com.momen.weather.data.remote.model.ForecastResponse
-import com.momen.weather.data.remote.model.WeatherResponse
+import com.momen.data.BuildConfig
+import com.momen.data.local.LocalDataSource
+import com.momen.data.remote.WeatherApi
+import com.momen.data.remote.model.ForecastResponse
+import com.momen.data.remote.model.WeatherResponse
 import javax.inject.Inject
 import javax.inject.Singleton
 

@@ -1,4 +1,4 @@
-package com.momen.weather.utils
+package com.momen.core.utils
 
 
 object IconProvider {

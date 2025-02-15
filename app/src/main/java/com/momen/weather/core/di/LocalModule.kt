@@ -2,8 +2,8 @@ package com.momen.weather.core.di
 
 
 import android.content.Context
-import com.momen.weather.data.local.LocalDataSource
-import com.momen.weather.data.local.LocalDataSourceImpl
+import com.momen.data.local.LocalDataSource
+import com.momen.data.local.LocalDataSourceImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -16,6 +16,6 @@ import javax.inject.Singleton
 object LocalModule {
     @Provides
     @Singleton
-    fun provideLocalDataSource(@ApplicationContext context: Context): LocalDataSource =
-        LocalDataSourceImpl(context)
+    fun provideLocalDataSource(@ApplicationContext context: Context): com.momen.data.local.LocalDataSource =
+        com.momen.data.local.LocalDataSourceImpl(context)
 }
