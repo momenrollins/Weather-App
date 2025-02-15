@@ -71,14 +71,14 @@ dependencies {
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
 
-    implementation (libs.retrofit)
-    implementation (libs.converter.gson)
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
     implementation(libs.logging.interceptor)
 
     implementation(libs.hilt.android)
     implementation(libs.androidx.hilt.navigation.compose)
-        implementation(libs.androidx.runtime.livedata)
-        kapt(libs.hilt.android.compiler)
+    implementation(libs.androidx.runtime.livedata)
+    kapt(libs.hilt.android.compiler)
 
     implementation(libs.coil.compose)
     implementation(libs.coil.network.okhttp)

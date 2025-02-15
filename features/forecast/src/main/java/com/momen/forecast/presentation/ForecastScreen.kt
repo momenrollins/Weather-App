@@ -48,7 +48,7 @@ fun ForecastScreen(
                                 style = MaterialTheme.typography.bodyLarge
                             )
                             Text(
-                                text = "Temperature: ${forecast.main.temp}°C",
+                                text = "Temperature: ${WeatherFormatter.formatTemperature(forecast.main.temp)}",
                                 style = MaterialTheme.typography.bodyMedium
                             )
                             Text(

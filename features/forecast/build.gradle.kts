@@ -2,6 +2,8 @@ plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.compose.compiler)
+    id("kotlin-kapt")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -52,6 +54,11 @@ dependencies {
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
 
+    implementation(libs.hilt.android)
+    implementation(libs.androidx.hilt.navigation.compose)
+    implementation(libs.androidx.runtime.livedata)
+    kapt(libs.hilt.android.compiler)
+
     implementation(libs.androidx.hilt.navigation.compose)
     implementation(libs.androidx.runtime.livedata)
     implementation(libs.weatherutils)
@@ -62,4 +69,8 @@ dependencies {
     
     implementation(project(":core"))
     implementation(project(":data"))
+}
+
+kapt {
+    correctErrorTypes = true
 }

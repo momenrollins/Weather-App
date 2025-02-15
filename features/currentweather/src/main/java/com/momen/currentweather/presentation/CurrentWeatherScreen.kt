@@ -15,6 +15,7 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import coil3.compose.rememberAsyncImagePainter
 import com.momen.core.utils.IconProvider
+import com.momen.weatherutils.WeatherFormatter
 
 @Composable
 fun CurrentWeatherScreen(
@@ -43,7 +44,7 @@ fun CurrentWeatherScreen(
             weather != null -> {
                 Text(text = "City: ${weather.name}", style = MaterialTheme.typography.titleLarge)
                 Text(
-                    text = "Temperature: ${weather.temp}°C",
+                    text = "Temperature: ${WeatherFormatter.formatTemperature(weather.temp)}",
                     style = MaterialTheme.typography.titleMedium
                 )
                 Text(
