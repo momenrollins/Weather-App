@@ -23,3 +23,7 @@ rootProject.name = "Weather"
 include(":app")
 include(":core")
 include(":data")
+include(":features")
+include(":features:cityinput")
+include(":features:currentweather")
+include(":features:forecast")

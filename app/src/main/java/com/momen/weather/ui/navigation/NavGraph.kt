@@ -8,9 +8,9 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.momen.weather.features.cityinput.presentation.CityInputScreen
-import com.momen.weather.features.currentweather.presentation.CurrentWeatherScreen
-import com.momen.weather.features.forecast.presentation.ForecastScreen
+import com.momen.cityinput.presentation.CityInputScreen
+import com.momen.currentweather.presentation.CurrentWeatherScreen
+import com.momen.forecast.presentation.ForecastScreen
 
 @Composable
 fun NavGraph() {
