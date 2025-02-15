@@ -28,6 +28,9 @@ jobs:
             ~/.gradle/wrapper
           key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
 
+      - name: Publish weatherutils to Maven Local
+        run: ./gradlew :weatherutils:publishToMavenLocal
+
       - name: Grant execute permission to Gradle
         run: chmod +x gradlew
 
