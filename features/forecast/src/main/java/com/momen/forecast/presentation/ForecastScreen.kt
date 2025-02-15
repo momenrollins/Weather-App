@@ -16,7 +16,7 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.momen.forecast.intent.ForecastIntent
 import com.momen.forecast.state.ForecastState
-import com.momen.core.utils.WeatherFormatter
+import com.momen.weatherutils.WeatherFormatter
 
 @Composable
 fun ForecastScreen(

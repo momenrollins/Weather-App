@@ -92,10 +92,10 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
 
     testImplementation("org.mockito:mockito-core:5.13.0")
-    testImplementation("org.mockito.kotlin:mockito-kotlin:5.4.0")
-    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.10.1")
+    testImplementation(libs.mockito.kotlin)
+    testImplementation(libs.kotlinx.coroutines.test)
 
-    testImplementation("androidx.arch.core:core-testing:2.2.0")
+    testImplementation(libs.androidx.core.testing)
 
     implementation(project(":core"))
     implementation(project(":data"))

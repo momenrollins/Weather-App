@@ -1,11 +1,12 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
-    alias(libs.plugins.compose.compiler)
+
+    id("maven-publish")
 }
 
 android {
-    namespace = "com.momen.forecast"
+    namespace = "com.momen.weatherutils"
     compileSdk = 35
 
     defaultConfig {
@@ -31,35 +32,29 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
-    buildFeatures {
-        compose = true
+}
+publishing {
+    publications {
+        create<MavenPublication>("release") {
+            groupId = "com.momen"
+            artifactId = "weatherutils"
+            version = "1.0.0"
+
+            afterEvaluate {
+                from(components["release"])
+            }
+        }
     }
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.1"
+    repositories {
+        mavenLocal()
     }
 }
-
 dependencies {
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
-
-    implementation(libs.androidx.activity.compose)
-    implementation(platform(libs.androidx.compose.bom))
-    implementation(libs.androidx.ui)
-    implementation(libs.androidx.ui.graphics)
-    implementation(libs.androidx.ui.tooling.preview)
-    implementation(libs.androidx.material3)
-
-    implementation(libs.androidx.hilt.navigation.compose)
-    implementation(libs.androidx.runtime.livedata)
-    implementation(libs.weatherutils)
-
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-    
-    implementation(project(":core"))
-    implementation(project(":data"))
 }
