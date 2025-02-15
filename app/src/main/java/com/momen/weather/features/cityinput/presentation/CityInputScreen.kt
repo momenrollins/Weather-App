@@ -6,6 +6,7 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.*
+import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -15,7 +16,7 @@ fun CityInputScreen(
     onCitySelected: (String) -> Unit,
     viewModel: CityInputViewModel = hiltViewModel()
 ) {
-    var cityText by remember { mutableStateOf("") }
+    val cityText by viewModel.city.observeAsState("")
 
     Column(
         modifier = Modifier
@@ -25,16 +26,13 @@ fun CityInputScreen(
     ) {
         TextField(
             value = cityText,
-            onValueChange = { cityText = it },
+            onValueChange = { viewModel.setCity(it) },
             label = { Text("Enter City Name") },
             modifier = Modifier.fillMaxWidth()
         )
         Spacer(modifier = Modifier.height(16.dp))
         Button(
-            onClick = {
-                viewModel.setCity(cityText)
-                onCitySelected(cityText)
-            },
+            onClick = { onCitySelected(cityText) },
             modifier = Modifier.fillMaxWidth()
         ) {
             Text("Get Weather")

@@ -15,12 +15,17 @@ class CurrentWeatherViewModel @Inject constructor(
     private val _weather = MutableLiveData<WeatherResponse?>()
     val weather: LiveData<WeatherResponse?> = _weather
 
+    private val _error = MutableLiveData<String?>()
+    val error: LiveData<String?> = _error
+
     fun loadWeather(city: String) {
         viewModelScope.launch {
             try {
                 _weather.value = repository.getCurrentWeather(city)
+                _error.value = null
             } catch (e: Exception) {
                 _weather.value = null
+                _error.value = "Failed to load weather: ${e.localizedMessage}"
             }
         }
     }
